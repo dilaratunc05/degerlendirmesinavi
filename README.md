@@ -1,10 +1,14 @@
 # Kulüp Değerlendirme Sınavı - Yazılım ve Haberleşme Alanı
+.
+**PROJE 1 - GPS ile mesafe ve yön **
+- `görev_y1/`: Bu proje de GPS koordinatlarını kullanarak yön ve mesafe hesabı yapan bir yazılım geliştirdim
 
-Bu depo, kulüp üyelik değerlendirme sınavı kapsamında hazırladığım görevleri içermektedir.
+-*Kazanımlar:*
+-Haversine Formülü:Dünya düz olmadığı için iki mesafe arasındaki gerçek uzunluğu bu formülle hesapladık.Enlem ve boylamlar arasındaki farkı radyana çevirip trigonometrik adımlardan geçirdikten sonra dünyanın yarıçapı ile çarparak hassas ölçüm elde etmeyi
+-Temel Python OOP/fonksiyon yapısı
+-Matematiksel Fonksiyonlar
+-Hata Yönetimi
 
-## 📂 Dosya Yapısı
-- `görev_y1/`: GPS koordinatları ile Haversine mesafesi, yön hesabı, rota analizi ve hata yönetimi kodları.
-
-## 🛠️ Kullanılan Teknolojiler
-- Python 3
+*Kullanılan Teknolojiler*
+- Python 
 - Git & GitHub
