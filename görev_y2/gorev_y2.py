@@ -12,12 +12,12 @@ while True:
     frame= cv2.resize(frame,(900,500))
     hsv = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
 
-    lower_red1 =np.array([0,50,50]) # hue , saturation, values
+    lower_red1 =np.array([0,50,50]) 
     upper_red1 = np.array([10, 255, 255])
     lower_red2 = np.array([170, 50, 50])
     upper_red2 = np.array([180, 255, 255])
 
-    mask1= cv2.inRange(hsv,lower_red1,upper_red1)# pikseller arasındaki görüntüyü hsv adı altında algıladı 
+    mask1= cv2.inRange(hsv,lower_red1,upper_red1)
     mask2=cv2.inRange(hsv,lower_red2,upper_red2)
     masks = mask2 + mask1
 
@@ -25,12 +25,12 @@ while True:
     cv2.imshow("kırmızı tespit edildi",result)
 
     contours,_ = cv2.findContours(masks , cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    cv2.drawContours(frame,contours,-1,(0,255,0),2) #-1 tüm hepsiniçizer , 2 kalınlığı ayarlar
+    cv2.drawContours(frame,contours,-1,(0,255,0),2) 
 
-    contours=sorted(contours,key =cv2.contourArea,reverse=True)#reverse büyükten küçüğe gitmesini sağladı
+    contours=sorted(contours,key =cv2.contourArea,reverse=True)
 
     time_now= cv2.getTickCount()
-    diff_time= (time_now-frame_time)/freq # yol=hız.zaman mantığı 
+    diff_time= (time_now-frame_time)/freq 
     frame_time= time_now
     FPS = 1 / diff_time if diff_time >0 else 0
     show_fps=f"FPS:{FPS}"
@@ -44,7 +44,7 @@ while True:
 
         object_center_x= x+w //2
         object_center_y= y+h//2
-        cv2.circle(frame,( object_center_x, object_center_y),3,(255,0,0),-1)#-1 neden ekleriz
+        cv2.circle(frame,( object_center_x, object_center_y),3,(255,0,0),-1)
 
         height,width ,_ =frame.shape
         frame_center_x=width//2
