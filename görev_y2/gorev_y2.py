@@ -44,7 +44,7 @@ while True:
 
         object_center_x= x+w //2
         object_center_y= y+h//2
-        cv2.circle(frame,( object_center_x, object_center_y),3,(255,0,0),-1)
+        cv2.circle(frame,( object_center_x, object_center_y),5,(255,0,0),-1)
 
         height,width ,_ =frame.shape
         frame_center_x=width//2

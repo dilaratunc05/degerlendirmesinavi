@@ -1,2 +1,14 @@
 ## Gün 1:
-Birinci projeyi yaklaış 3 4 ssat sonunda bitirdim. Öncelikle GitHub'ı kurdum ve Visual Studio Code ile bağladım bu sırada yapay zekadan destek aldım .Ardından 
+Bugün öncelikle temel kurulumlarla başladım. GitHub ile visual studio code'u birbirine bağladım ardından gerekli ayrıntıları öğrenmeye başladım.Proje de temel python bilgilerimi kullandım ve extradan bazı kullanımları öğrendim mesela iki GPS koordinatı arasındaki yön açısını hesaplamak için kullanılan mat.atan2 nin ne işe yaradığını ve nasıl kullanıldığını anlamaya çalıştım.Haversine formülünü araştırdım ve mantığını kavradım.Yön bulmakta kullanılan trigometrik hesaplamalarda hem mantığını anlarken hemde kodları yazarken biraz zorlandım ama anlamak için uğraştım . Kurulumlarla ve ilk hazırlıklarla birlikte proje 3 4 saatimi aldı.
+
+## Gün 2:
+Bugün 1.projedeki bazı anlamadığım yerlerle uğraştım ve tammalayıp gönderdim fakat commit atmayı projeyi tamamladıktan sonra öğrendiğim için proje esnasında atamadım . Ardından 2. projeye başladım ve daha önce hiç OpenCv kullanmadığım için bu projede diğerine göre daha çok zorlandım ama her satırı anlamak için uğraştım ,yapay zekadan da destek alarak kodları adım adım öğrenerek yazmaya çalıştım ve az da olsa OpenCv kullanımı hakkında bilgi sahibi olmuş oldum. Neden HSV kullandığımızı araştırdım. Aynı zamanda temel Numpy bilgilerimi de tazelemiş oldum ve böylece projenin yarısını tamamladım.
+
+## Gün 4 :
+Proje 2 de eksik kalan FPS kısmını tamamladım .Bu projedeki en zor kısım benim için buranın mantığını anlamaktı ,bunun için baya uğraştım .Daha sonra videoyu ekrana yansıtması için yazılması gereken kodları öğrendim ve yükleyip projemi çalıştırabildim. 
+
+## Gün 5:
+Bugün projelerimi yaparken tamamlayamadığım günlüğümü ve Readme dokümantasyonunu tamamlamakla uğraştım aynı zamanda tekrardan projelere göz gezdirmiş oldum.
+
+
+ 
