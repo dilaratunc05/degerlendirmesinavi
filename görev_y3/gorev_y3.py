@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import time
 
-video = cv2.VideoCapture("kirmizitoplar.mp4")
+video = cv2.VideoCapture("kirmizitoplarr.mp4")
 frame_time=cv2.getTickCount()
 freq=cv2.getTickFrequency()
 qr_detector = cv2.QRCodeDetector()
@@ -81,17 +81,21 @@ while True:
 
             if start_time is None:
                  start_time=time.time()
-                 gecen_time= time.time()- start_time
-                 print(f"kutunun içinde geçen süre:{gecen_time} saniye")
+
+            lost_time = None
+            
+            gecen_time= time.time()- start_time
+            print(f"kutunun içinde geçen süre:{gecen_time} saniye")
 
             if gecen_time>= 4.0:
                 is_locked = True
         else:
+            if lost_time is None :
+                lost_time = time.time()
             if time.time()- lost_time >= 0.2:
                 start_time=None
                 is_locked=False
-            if lost_time is None :
-                lost_time = time.time()
+            
                 
     
         if is_locked:
@@ -100,8 +104,8 @@ while True:
     data, points, _ = qr_detector.detectAndDecode(frame)
 
     if data :
-        print("Okunan QR kod:{data}.")
-        cv2.putText(frame,data,(50,100), cv2.FONT_HERSHEY_SIMPLEX,1.5,(0,255,0),3)
+        print(f"Okunan QR kod:{data}.")
+        cv2.putText(frame,data,(50,150), cv2.FONT_HERSHEY_SIMPLEX,1.5,(0,255,0),3)
     
     cv2.imshow("kırmızı nesne takibi",frame)
     if cv2.waitKey(25) & 0xFF == ord('q'):
