@@ -2,10 +2,11 @@ import cv2
 import numpy as np
 import time
 
-video = cv2.VideoCapture("kirmizitoplarr.mp4")
+video = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 frame_time=cv2.getTickCount()
 freq=cv2.getTickFrequency()
 qr_detector = cv2.QRCodeDetector()
+frame = cv2.imread("qr_kod.png")
 
 start_time=None
 is_locked= False
