@@ -21,10 +21,15 @@
 -Kontur ve sınır tespiti
 -Merkez ve Hata Hesaplama
 -Gerçek zamanlı FPS takibi
+-Renk parametreleri
 
 *Kullanılan Teknolojiler:*
 -Python
 -OpenCv
 -NumPy
+
+**PROJE 3 - Kilitlenme mantığı ve QR okuma**
+
+
 
 
