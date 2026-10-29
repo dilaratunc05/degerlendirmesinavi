@@ -13,6 +13,7 @@ Bugün projelerimi yaparken tamamlayamadığım günlüğümü ve Readme doküma
 ## Gün 5:
 Bugün 3. projeyi de bitirdim . Hem en zevk aldığım hem de en az zorlandığım proje sanırım bu projeydi .2.projeninde devamı olduğu için öğrendiğim şeyleri daha rahat bir şekilde kullanabildim örneğin cv2.putText kullanımını hem daha hızlı anladım hemde kolaylıkla yapabildim.Kilitleme kısmında ise yine hem temel python bilgilerini kullanma hem de akıl yürütme açısından verimli bir çalışma olduğunu düşünüyorum.Bu projeyi de yaklaşık 2 saatin sonunda tamamlamış oldum.
 
-
+## Gün 6:
+Bugün 4. projenin büyük bir kısmını bitirdim ve bana en çok teknik derinlik katan proje bu oldu. Biraz karmaşık bir sistem ile kurulduğu için adım adım her şeyi öğrenerek gitmek biraz zamanımı aldı.Öncelikle struct yapısını araştırdım ve biraz video izledim ardından proje için öğrenmem gereken diğer yapıların ve kavramların(Socket ,UDP , IPv4 ve port mantığı, cheksum ve header )neler olduğunu ve ne için kullanıldıklarını öğrendim.Böylece bugün sadece kod yazmadım aynı zamanda verinin nasıl paketlenip karşı tarafa ulaştırıldığının arka plandaki mantığını da kavramaya çalıştım.
 
  
