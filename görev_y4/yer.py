@@ -1,36 +1,42 @@
+import time 
 import socket
 import struct
-import arac
 import gorev_y4
-import time
 
 sckt = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 teslim_yeri= ("127.0.0.1",1000)
 sckt.bind(teslim_yeri)
 
 FORMAT = "!2B2I7fB"
-veri_formati="!2B2I7f"
 
-try:
+bozuk_sayac=0
+kayip_sayac=0
+son_paket_no=0
+
+
+print("Yer istasyonuna bağlanıldı.")
+try: 
     while True:
-        veri_paketi,adres=sckt.recvfrom(1024)
+        veri_paketi, adres= sckt.recvfrom(1024)
 
-        gelen_veri= veri_paketi[:-1]
-        gelen_cksum = veri_paketi[-1]
+        if len(veri_paketi) == 40:
+            baslik1, baslik2, gelen_paket_no = struct.unpack("!2BI", veri_paketi[:6])
 
-        cksum_start= 0
-        for b in gelen_veri:
-            cksum_start ^= b
+            if baslik1 == 0xAA and baslik2 == 0x55:
+                if son_paket_no != 0 and gelen_paket_no > son_paket_no + 1:
+                    fark = gelen_paket_no - son_paket_no - 1
+                    kayip_sayac += fark
+                    print(f"Arada {fark} paket kayboldu. Toplam kayıp: {kayip_sayac}")
 
-        if gelen_cksum != cksum_start:
-                print("Cheksumlar uyuşmuyor.")
-                continue
+                son_paket_no = gelen_paket_no
+        try :
+            cozulmus_veri=gorev_y4.decode(veri_paketi)
+        except ValueError as hata:
+            bozuk_sayac += 1
+            print(f"Geçersiz paket: {hata}. Toplam hatalı: {bozuk_sayac}")
+            continue
 
-            
-        cozulmus_veri=struct.unpack(veri_formati,gelen_veri)
-
-        baslik1 = cozulmus_veri[0]
-        baslik2 = cozulmus_veri[1]
+ 
         paket_no = cozulmus_veri[2]
         zaman = cozulmus_veri[3]
         enlem = cozulmus_veri[4]
@@ -40,14 +46,13 @@ try:
         batarya = cozulmus_veri[8]
         x = cozulmus_veri[9]
         y = cozulmus_veri[10]
+        kilit= cozulmus_veri[11]
 
-        if baslik1 == 0xAA and batarya== 0x55:
-             print(f"paket {paket_no} alındı.Hız:{hiz},İrtifa:{irtifa},Batarya:{batarya}")
-        else:
-             print("Paket başlığı uyuşmadı")
+        print(f"Paket {paket_no} alındı. Hız: {hiz}, İrtifa: {irtifa}, Batarya: {batarya}") 
+
 
 except KeyboardInterrupt:
-     print("yer istasyonu kapatıldı")
+     print("Yer istasyonu kapatıldı")
      sckt.close()
         
 

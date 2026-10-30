@@ -1,11 +1,10 @@
 import socket
 import time
-import gorev_y4
-import packet 
+import gorev_y4 
+import random
 
 sckt= socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 hedef = ("127.0.0.1", 1000)
-
 paket_no=0
 zaman=0
 
@@ -22,7 +21,16 @@ try:
         y=4.7
         kilit = 1
 
-        data_packet=packet(paket_no, zaman, enlem, boylam, irtifa, hiz, batarya, x, y,kilit)
+        data_packet=gorev_y4.encode(paket_no, zaman, enlem, boylam, irtifa, hiz, batarya, x, y,kilit)
+
+        r= random.random()
+        if r <0.02:
+            print("Paket kayboldu")
+            continue
+        elif r <0.07:
+            data_packet=data_packet[:-1] + bytes([data_packet[-1]^ 0xFF])
+            print(f"Paket yolda bozuldu")
+
 
         sckt.sendto(data_packet,hedef)
         print(f"Paket {paket_no} gönderildi")
