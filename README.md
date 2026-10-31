@@ -45,12 +45,12 @@ RGB kadar hassas olmasa da HSV de aşırı düşük ve aşırı yüksek ışık 
 - XOR Checksum(^): Verinin yolda bozulup bozulmadığını anlamak amacıyla paketin sonuna XOR tabanlı doğrulama baytı eklenir.
 - Paket Yapısı : Aktarılcak tüm telemetrileri bir format dizilimi altında yazarız(!2B2I7fB)
 
-*! --> Standart ağ byte düzeninde paketle uyarısı*
-*2B --> 1 bytelık 2 tane unsigned char(B) - (başlık1 , başlık2)*
-*2I --> 4 bytlık 2 tane integer sayı (I) - ( zaman ve paket_no)*
-*7f --> 4 bytelık 7 tane float sayı (f) - (hız,irtifa,enlem,boylam,batarya,x,y,)*
-*B --> 1 bytelık 1 tane unsigned char (B) - Kilit durumu*
-*Toplam: 39 byte*
+- *! --> Standart ağ byte düzeninde paketle uyarısı*
+- *2B --> 1 bytelık 2 tane unsigned char(B) - (başlık1 , başlık2)*
+- *2I --> 4 bytlık 2 tane integer sayı (I) - ( zaman ve paket_no)*
+- *7f --> 4 bytelık 7 tane float sayı (f) - (hız,irtifa,enlem,boylam,batarya,x,y,)*
+- *B --> 1 bytelık 1 tane unsigned char (B) - Kilit durumu*
+- *Toplam: 39 byte*
 
 
 
